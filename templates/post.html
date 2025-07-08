@@ -36,7 +36,11 @@
 
         <div class="mt-14 text-xs text-gray-500">
           <div th:text="${post.spec.title}" class="font-semibold"></div>
-          <div th:text="${site.url.endsWith('/') ? site.url.substring(0, site.url.length() - 1) : site.url + post.status.permalink}" class="truncate"></div>
+          <div
+            th:with="urlStr=${site.url.toString()}"
+            th:text="${urlStr.endsWith('/') ? urlStr.substring(0, urlStr.length() - 1) + post.status.permalink : urlStr + post.status.permalink}"
+            class="truncate"
+          ></div>
           <div class="mt-2">作者：<span th:text="${post.owner.displayName}"></span></div>
         </div>
       </section>
@@ -66,17 +70,5 @@
     </aside>
 
     <footer th:replace="~{module/footer}"></footer>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        main.generateTOC();
-        main.scrollHighlightTOC();
-        main.clickHighlightTOC();
-        main.wordCountAndReadTime();
-        main.generateTimeTips();
-        main.addIconToLinks();
-        main.upvote();
-      });
-    </script>
   </body>
 </html>
