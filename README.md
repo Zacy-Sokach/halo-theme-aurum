@@ -1,5 +1,5 @@
 > [!NOTE]
-> 本项目已不再活跃，若对本主题感兴趣，欢迎使用静态框架 Astro 的[重构版本](https://github.com/Liksone/astro-theme-sora)。
+> 本项目基于[Sora](https://github.com/Liksone/halo-theme-sora)，感兴趣的可以去关注下
 
 <h1 align="center">Sora</h1>
 
