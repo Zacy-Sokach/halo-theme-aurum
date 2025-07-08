@@ -1,20 +1,20 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-sora
+  name: theme-aurum
 spec:
-  displayName: Sora
+  displayName: Aurum
   author:
     name: Liks
     website: https://blog.liks.space
-  description: 一款简约的个人博客主题
-  homepage: https://github.com/Liksone/halo-theme-sora
-  repo: https://github.com/Liksone/halo-theme-sora.git
-  issues: https://github.com/Liksone/halo-theme-sora/issues
-  settingName: theme-sora-setting
-  configMapName: theme-sora-configmap
-  version: 0.5.17
+  description: 一个以呈现内容为唯一宗旨的主题
+  homepage: https://github.com/Zacy-Sokach/halo-theme-aurum
+  repo: https://github.com/Zacy-Sokach/halo-theme-aurum.git
+  issues: https://github.com/Zacy-Sokach/halo-theme-aurum/issues
+  settingName: theme-aurum-setting
+  configMapName: theme-aurum-configmap
+  version: 0.1
   requires: '>=2.20.0'
   license:
     - name: GPLv3
-      url: https://github.com/Liksone/halo-theme-sora/blob/main/LICENSE
+      url: https://github.com/Zacy-Sokach/halo-theme-aurum/blob/main/LICENSE
