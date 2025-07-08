@@ -3,62 +3,7 @@
   <head th:replace="~{module/head(title = ${site.title})}"> </head>
 
   <body>
-    <header>
-      <div class="mt-20 mb-20 flex flex-col items-center gap-8 sm:flex-row sm:gap-14">
-        <img th:src="${theme.config.general.avatar}" class="h-40 rounded-full" alt="Avatar" />
-
-        <div class="flex flex-col items-center gap-4 font-mono">
-          <div class="text-4xl" th:text="${site.title}"></div>
-
-          <div class="text-center flex flex-wrap justify-center gap-2">
-            <th:block th:each="item : ${theme?.config?.social?.socials}">
-              <a class="text-black" th:href="@{${item.url}}">
-                <span
-                  class="iconify-large"
-                  th:classappend="${{
-                    'bilibili': 'icon-[mingcute--bilibili-line]',
-                    'email': 'icon-[material-symbols--mail-outline-rounded]',
-                    'facebook': 'icon-[mingcute--facebook-line]',
-                    'github': 'icon-[mingcute--github-line]',
-                    'instagram': 'icon-[mdi--instagram]',
-                    'qq': 'icon-[mingcute--qq-line]',
-                    'telegram': 'icon-[ri--telegram-line]',
-                    'tiktok': 'icon-[mingcute--tiktok-line]',
-                    'twitter': 'icon-[si--twitter-line]',
-                    'youtube': 'icon-[mingcute--youtube-line]',
-                    'weibo': 'icon-[icon-park-outline--weibo]',
-                    'xiaohongshu': 'icon-[simple-icons--xiaohongshu]',
-                    'zhihu': 'icon-[ri--zhihu-fill]'
-                  }[item.name]}"
-                ></span>
-              </a>
-            </th:block>
-
-            <a class="text-black" th:if="${theme.config.general.rss == 1}" href="/rss.xml">
-              <span class="iconify-large icon-[heroicons--rss]"></span>
-            </a>
-          </div>
-
-          <nav class="flex flex-wrap justify-center gap-3">
-            <th:block th:with="menu = ${menuFinder.getPrimary()}">
-              <th:block th:with="menuItems = ${menu.menuItems}">
-                <a
-                  class="index-nav"
-                  th:each="menuItem : ${menuItems}"
-                  th:href="@{${menuItem.status.href}}"
-                  th:text="${menuItem.status.displayName}"
-                  th:target="${menuItem.spec.target?.value}"
-                ></a>
-              </th:block>
-            </th:block>
-
-            <a class="index-nav" href="javascript:SearchWidget.open()">
-              <span class="iconify icon-[fa-solid--search]"></span>
-            </a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <header th:replace="~{module/header}"></header>
 
     <main th:fragment="postList" class="mx-auto max-w-[768px]">
       <div class="flex flex-col gap-5">
