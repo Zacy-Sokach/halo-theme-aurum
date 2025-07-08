@@ -14,7 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("scroll", () => {
   const btn = document.querySelector(".to-top");
   if (!btn) return;
-
-  const scroll = window.scrollY;
-  btn.classList.toggle("active", scroll >= window.innerHeight / 2);
+  btn.classList.toggle("active", window.scrollY >= window.innerHeight / 2);
 });
